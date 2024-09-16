@@ -1,2 +1,1 @@
-*.py    # Ignora tutti i file con estensione .py
 .venv/  # Ignora la cartella venv (ambiente virtuale)
