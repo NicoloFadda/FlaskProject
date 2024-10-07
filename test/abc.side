@@ -1,0 +1,79 @@
+{
+  "id": "f90a9a52-96e6-4fde-8a67-8893ad2a0ab8",
+  "version": "2.0",
+  "name": "logout",
+  "url": "http://127.0.0.1:5000/auth/signup",
+  "tests": [{
+    "id": "c4167dc4-a033-4ee0-a586-5ffa9a0d0335",
+    "name": "Untitled",
+    "commands": [{
+      "id": "fb75fc90-b6f7-4e06-a264-81ae46c57b91",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5000/auth/signup",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "724f3627-4ebe-4eb7-961c-15f47d6b3357",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.mb-3:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@example.com"
+    }, {
+      "id": "ff8a7563-1b3b-440e-81ee-2a3182e06540",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "016808b5-0ab4-4a47-99a0-5f88e1fb0154",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "adminpassword"
+    }, {
+      "id": "3abbef92-a26e-4fe9-9d2f-3896d653ed1e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=.nav-item:nth-child(4) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/auth/logout')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "42340054-c5da-470f-b64f-97b6ff7b9204",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c4167dc4-a033-4ee0-a586-5ffa9a0d0335"]
+  }],
+  "urls": ["http://127.0.0.1:5000/"],
+  "plugins": []
+}

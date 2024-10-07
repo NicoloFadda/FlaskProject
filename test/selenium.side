@@ -1,0 +1,173 @@
+{
+  "id": "ebd960da-3e60-4f7e-b536-3e815411f21d",
+  "version": "2.0",
+  "name": "selenium",
+  "url": "http://localhost:5000/auth/login",
+  "tests": [{
+    "id": "b042159d-43f8-427e-9eda-b36475d96086",
+    "name": "AdminLogin",
+    "commands": [{
+      "id": "58de61a3-2bfd-4ba8-8bbd-c5f9081326d9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:5000/auth/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bafce30e-3298-4d3d-9694-8fe2df927462",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.mb-3:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@example.com"
+    }, {
+      "id": "430dce77-fac6-4336-8ede-8a28c4625f59",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "adminpassword"
+    }, {
+      "id": "b1a788b4-62da-4b88-997a-a4acf83ec857",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b16073c2-2674-48d8-9d07-0a69dc06adc2",
+    "name": "AdminLoginFailed",
+    "commands": [{
+      "id": "0b9d23b3-f235-474a-b8a2-abd8dcae8c3c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:5000/auth/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec893c03-18d0-4d3c-ada5-4d6f25652ef8",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.mb-3:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@example.com"
+    }, {
+      "id": "3c3d294d-f2a9-41ad-9d11-e9fb6d50deff",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "wrongpassword"
+    }, {
+      "id": "6024a61c-58e0-42c2-9e51-24df1ae9a339",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "fd546563-45a4-4b38-9486-0507218e59fc",
+    "name": "AdminLogout",
+    "commands": [{
+      "id": "bbf2a2b0-7dc5-4bd0-8e69-411f1837a515",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:5000/auth/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df6c71e5-c084-48ed-94c5-aac0be3daed3",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.mb-3:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin@example.com"
+    }, {
+      "id": "91394db2-bf11-44ee-8746-22b6184dc476",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "356f78b4-9592-4c2e-894e-f078416ad378",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61c228a9-1356-444a-81f7-6ca1bde0459e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=.nav-item:nth-child(4) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/auth/logout')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9fba7234-3107-44e3-a0c6-b8381759c7b9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b042159d-43f8-427e-9eda-b36475d96086"]
+  }],
+  "urls": [],
+  "plugins": []
+}

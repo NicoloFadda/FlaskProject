@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.profile') }}">Profilo</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                <li><a href="{{ url_for('auth.signup') }}">Signup</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+
+
+    <h1>Sei sicuro di voler effettuare il logout?</h1>
+    <form action="{{ url_for('auth.logout') }}" method="post">
+        <button type="submit">Logout</button>
+        <a href="{{ url_for('auth.profile') }}">Annulla</a>
+    </form>
+</body>
+</html>
