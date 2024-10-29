@@ -8,22 +8,40 @@
             <div class="mb-3">
                 <input class="form-control" type="email" name="email" placeholder="Your Email" autofocus="">
             </div>
-        
             <div class="mb-3">
                 <input class="form-control" type="text" name="username" placeholder="Your Name">
             </div>
             <div class="mb-3">
                 <input class="form-control" type="password" name="password" placeholder="Your Password">
             </div>
+
+            <script>
+                function loadNewCaptcha() {
+                    const captchaImage = document.getElementById('captcha-image');
+                    captchaImage.src = '/auth/new_captcha?' + new Date().getTime(); // Append a timestamp to avoid caching
+                }
+            </script>
+            
+            
+            <!-- CAPTCHA Section -->
+            <div class="mb-3">
+                <img src="{{ url_for('auth.captcha_image') }}" alt="CAPTCHA"  id="captcha-image">
+            </div>
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary mb-3" onclick="loadNewCaptcha()">Nuovo CAPTCHA</button>
+                <input class="form-control" type="text" name="captcha_input" placeholder="Enter CAPTCHA">
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="alert alert-danger" role="alert">
-                    {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
-                </div>
-            {% endif %}
+        {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ messages[0] }}. Go to <a href="{{ url_for('auth.signup') }}">signup page</a>.
+            </div>
+        {% endif %}
         {% endwith %}
     </div>
 </div>
 {% endblock %}
+
